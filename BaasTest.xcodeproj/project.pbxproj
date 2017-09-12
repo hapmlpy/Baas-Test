@@ -8,22 +8,91 @@
 
 /* Begin PBXBuildFile section */
 		2E106CBC1F6572BA008AE283 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E106CBB1F6572BA008AE283 /* AppDelegate.swift */; };
-		2E106CBE1F6572BA008AE283 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E106CBD1F6572BA008AE283 /* ViewController.swift */; };
-		2E106CC11F6572BA008AE283 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E106CBF1F6572BA008AE283 /* Main.storyboard */; };
+		2E106CBE1F6572BA008AE283 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E106CBD1F6572BA008AE283 /* SignInViewController.swift */; };
 		2E106CC41F6572BA008AE283 /* BaasTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E106CC21F6572BA008AE283 /* BaasTest.xcdatamodeld */; };
 		2E106CC61F6572BA008AE283 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E106CC51F6572BA008AE283 /* Assets.xcassets */; };
 		2E106CC91F6572BA008AE283 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E106CC71F6572BA008AE283 /* LaunchScreen.storyboard */; };
+		2E106CD11F6576D9008AE283 /* DroiCoreSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E106CD01F6576D9008AE283 /* DroiCoreSDK.framework */; };
+		2E106CD21F6576D9008AE283 /* DroiCoreSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E106CD01F6576D9008AE283 /* DroiCoreSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2E106CD61F6576FF008AE283 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E106CD51F6576FF008AE283 /* libsqlite3.tbd */; };
+		2E106CD81F65770B008AE283 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E106CD71F65770B008AE283 /* libz.tbd */; };
+		2E106CDA1F657712008AE283 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E106CD91F657712008AE283 /* SystemConfiguration.framework */; };
+		2E106CE11F657768008AE283 /* DroiBaaS.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E106CDE1F657768008AE283 /* DroiBaaS.m */; };
+		2E106CE21F657768008AE283 /* DroiBaaS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E106CDF1F657768008AE283 /* DroiBaaS.plist */; };
+		2E106CE31F657768008AE283 /* DroiBaaSForSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E106CE01F657768008AE283 /* DroiBaaSForSwift.swift */; };
+		2E2E36F81F6597AB008BC6F2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2E36F71F6597AB008BC6F2 /* User.swift */; };
+		2E2E36FA1F65A284008BC6F2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2E36F91F65A284008BC6F2 /* RegisterViewController.swift */; };
+		2E2E36FE1F660F9D008BC6F2 /* WilddogAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2E36FB1F660F9D008BC6F2 /* WilddogAuth.framework */; };
+		2E2E36FF1F660F9D008BC6F2 /* WilddogAuth.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2E36FB1F660F9D008BC6F2 /* WilddogAuth.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2E2E37001F660F9D008BC6F2 /* WilddogCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2E36FC1F660F9D008BC6F2 /* WilddogCore.framework */; };
+		2E2E37011F660F9D008BC6F2 /* WilddogCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2E36FC1F660F9D008BC6F2 /* WilddogCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2E2E37021F660F9D008BC6F2 /* WilddogSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2E36FD1F660F9D008BC6F2 /* WilddogSync.framework */; };
+		2E2E37031F660F9D008BC6F2 /* WilddogSync.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2E36FD1F660F9D008BC6F2 /* WilddogSync.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2E2E37051F660FD6008BC6F2 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2E37041F660FD6008BC6F2 /* JavaScriptCore.framework */; };
+		2E2E37071F66B66C008BC6F2 /* userBehaviorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2E37061F66B66C008BC6F2 /* userBehaviorViewController.swift */; };
+		2E2E37091F66B8B6008BC6F2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2E37081F66B8B6008BC6F2 /* MapViewController.swift */; };
+		2E2E370B1F66B930008BC6F2 /* BinInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2E370A1F66B930008BC6F2 /* BinInformationViewController.swift */; };
+		2E2E370D1F66E3E3008BC6F2 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2E370C1F66E3E3008BC6F2 /* libicucore.tbd */; };
+		2E2E370F1F66FDBD008BC6F2 /* BinsDroiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2E370E1F66FDBD008BC6F2 /* BinsDroiData.swift */; };
+		2E2E37141F67A5DA008BC6F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E2E37121F67A5DA008BC6F2 /* Main.storyboard */; };
+		2E2E37161F67A678008BC6F2 /* MapListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2E37151F67A678008BC6F2 /* MapListCell.swift */; };
+		2E2E37181F67B131008BC6F2 /* SuspiciousBinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2E37171F67B131008BC6F2 /* SuspiciousBinCell.swift */; };
+		2E2E371A1F67B15A008BC6F2 /* AdoptBinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2E37191F67B15A008BC6F2 /* AdoptBinCell.swift */; };
+		2E2E371C1F67B170008BC6F2 /* baseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2E371B1F67B170008BC6F2 /* baseCell.swift */; };
+		2EB9D8A61F68126B00F06F2B /* BinWdgData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB9D8A51F68126B00F06F2B /* BinWdgData.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2E106CD31F6576D9008AE283 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2E2E37031F660F9D008BC6F2 /* WilddogSync.framework in Embed Frameworks */,
+				2E2E37011F660F9D008BC6F2 /* WilddogCore.framework in Embed Frameworks */,
+				2E106CD21F6576D9008AE283 /* DroiCoreSDK.framework in Embed Frameworks */,
+				2E2E36FF1F660F9D008BC6F2 /* WilddogAuth.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2E106CB81F6572BA008AE283 /* BaasTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaasTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E106CBB1F6572BA008AE283 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2E106CBD1F6572BA008AE283 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2E106CC01F6572BA008AE283 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2E106CBD1F6572BA008AE283 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		2E106CC31F6572BA008AE283 /* BaasTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BaasTest.xcdatamodel; sourceTree = "<group>"; };
 		2E106CC51F6572BA008AE283 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E106CC81F6572BA008AE283 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E106CCA1F6572BA008AE283 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E106CD01F6576D9008AE283 /* DroiCoreSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DroiCoreSDK.framework; sourceTree = "<group>"; };
+		2E106CD51F6576FF008AE283 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		2E106CD71F65770B008AE283 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		2E106CD91F657712008AE283 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2E106CDC1F657768008AE283 /* BaasTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BaasTest-Bridging-Header.h"; sourceTree = "<group>"; };
+		2E106CDD1F657768008AE283 /* DroiBaaS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DroiBaaS.h; sourceTree = "<group>"; };
+		2E106CDE1F657768008AE283 /* DroiBaaS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DroiBaaS.m; sourceTree = "<group>"; };
+		2E106CDF1F657768008AE283 /* DroiBaaS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DroiBaaS.plist; sourceTree = "<group>"; };
+		2E106CE01F657768008AE283 /* DroiBaaSForSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DroiBaaSForSwift.swift; sourceTree = "<group>"; };
+		2E2E36F71F6597AB008BC6F2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2E2E36F91F65A284008BC6F2 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		2E2E36FB1F660F9D008BC6F2 /* WilddogAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WilddogAuth.framework; sourceTree = "<group>"; };
+		2E2E36FC1F660F9D008BC6F2 /* WilddogCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WilddogCore.framework; sourceTree = "<group>"; };
+		2E2E36FD1F660F9D008BC6F2 /* WilddogSync.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WilddogSync.framework; sourceTree = "<group>"; };
+		2E2E37041F660FD6008BC6F2 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		2E2E37061F66B66C008BC6F2 /* userBehaviorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userBehaviorViewController.swift; sourceTree = "<group>"; };
+		2E2E37081F66B8B6008BC6F2 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		2E2E370A1F66B930008BC6F2 /* BinInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinInformationViewController.swift; sourceTree = "<group>"; };
+		2E2E370C1F66E3E3008BC6F2 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		2E2E370E1F66FDBD008BC6F2 /* BinsDroiData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinsDroiData.swift; sourceTree = "<group>"; };
+		2E2E37131F67A5DA008BC6F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = BaasTest/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2E2E37151F67A678008BC6F2 /* MapListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapListCell.swift; sourceTree = "<group>"; };
+		2E2E37171F67B131008BC6F2 /* SuspiciousBinCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuspiciousBinCell.swift; sourceTree = "<group>"; };
+		2E2E37191F67B15A008BC6F2 /* AdoptBinCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdoptBinCell.swift; sourceTree = "<group>"; };
+		2E2E371B1F67B170008BC6F2 /* baseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = baseCell.swift; sourceTree = "<group>"; };
+		2EB9D8A51F68126B00F06F2B /* BinWdgData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinWdgData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +100,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E2E370D1F66E3E3008BC6F2 /* libicucore.tbd in Frameworks */,
+				2E2E37051F660FD6008BC6F2 /* JavaScriptCore.framework in Frameworks */,
+				2E2E37021F660F9D008BC6F2 /* WilddogSync.framework in Frameworks */,
+				2E2E37001F660F9D008BC6F2 /* WilddogCore.framework in Frameworks */,
+				2E106CDA1F657712008AE283 /* SystemConfiguration.framework in Frameworks */,
+				2E106CD81F65770B008AE283 /* libz.tbd in Frameworks */,
+				2E106CD61F6576FF008AE283 /* libsqlite3.tbd in Frameworks */,
+				2E2E36FE1F660F9D008BC6F2 /* WilddogAuth.framework in Frameworks */,
+				2E106CD11F6576D9008AE283 /* DroiCoreSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,8 +118,13 @@
 		2E106CAF1F6572BA008AE283 = {
 			isa = PBXGroup;
 			children = (
+				2E2E36FB1F660F9D008BC6F2 /* WilddogAuth.framework */,
+				2E2E36FC1F660F9D008BC6F2 /* WilddogCore.framework */,
+				2E2E36FD1F660F9D008BC6F2 /* WilddogSync.framework */,
+				2E106CD01F6576D9008AE283 /* DroiCoreSDK.framework */,
 				2E106CBA1F6572BA008AE283 /* BaasTest */,
 				2E106CB91F6572BA008AE283 /* Products */,
+				2E106CD41F6576FF008AE283 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +139,83 @@
 		2E106CBA1F6572BA008AE283 /* BaasTest */ = {
 			isa = PBXGroup;
 			children = (
+				2E106CDB1F65773A008AE283 /* Droibaas */,
 				2E106CBB1F6572BA008AE283 /* AppDelegate.swift */,
-				2E106CBD1F6572BA008AE283 /* ViewController.swift */,
-				2E106CBF1F6572BA008AE283 /* Main.storyboard */,
+				2EB9D8A71F6812FB00F06F2B /* Sign In Out VC */,
+				2E2E37061F66B66C008BC6F2 /* userBehaviorViewController.swift */,
+				2EB9D8A81F68132800F06F2B /* Map List VC */,
+				2E2E370A1F66B930008BC6F2 /* BinInformationViewController.swift */,
+				2EB9D8AA1F68134D00F06F2B /* WDG Data */,
+				2EB9D8A91F68134000F06F2B /* Droibaas Data */,
+				2E2E37121F67A5DA008BC6F2 /* Main.storyboard */,
 				2E106CC51F6572BA008AE283 /* Assets.xcassets */,
 				2E106CC71F6572BA008AE283 /* LaunchScreen.storyboard */,
 				2E106CCA1F6572BA008AE283 /* Info.plist */,
 				2E106CC21F6572BA008AE283 /* BaasTest.xcdatamodeld */,
 			);
 			path = BaasTest;
+			sourceTree = "<group>";
+		};
+		2E106CD41F6576FF008AE283 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2E2E370C1F66E3E3008BC6F2 /* libicucore.tbd */,
+				2E2E37041F660FD6008BC6F2 /* JavaScriptCore.framework */,
+				2E106CD91F657712008AE283 /* SystemConfiguration.framework */,
+				2E106CD71F65770B008AE283 /* libz.tbd */,
+				2E106CD51F6576FF008AE283 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2E106CDB1F65773A008AE283 /* Droibaas */ = {
+			isa = PBXGroup;
+			children = (
+				2E106CDD1F657768008AE283 /* DroiBaaS.h */,
+				2E106CDE1F657768008AE283 /* DroiBaaS.m */,
+				2E106CDF1F657768008AE283 /* DroiBaaS.plist */,
+				2E106CE01F657768008AE283 /* DroiBaaSForSwift.swift */,
+				2E106CDC1F657768008AE283 /* BaasTest-Bridging-Header.h */,
+			);
+			name = Droibaas;
+			sourceTree = "<group>";
+		};
+		2EB9D8A71F6812FB00F06F2B /* Sign In Out VC */ = {
+			isa = PBXGroup;
+			children = (
+				2E106CBD1F6572BA008AE283 /* SignInViewController.swift */,
+				2E2E36F91F65A284008BC6F2 /* RegisterViewController.swift */,
+			);
+			name = "Sign In Out VC";
+			sourceTree = "<group>";
+		};
+		2EB9D8A81F68132800F06F2B /* Map List VC */ = {
+			isa = PBXGroup;
+			children = (
+				2E2E37081F66B8B6008BC6F2 /* MapViewController.swift */,
+				2E2E37171F67B131008BC6F2 /* SuspiciousBinCell.swift */,
+				2E2E37191F67B15A008BC6F2 /* AdoptBinCell.swift */,
+				2E2E371B1F67B170008BC6F2 /* baseCell.swift */,
+				2E2E37151F67A678008BC6F2 /* MapListCell.swift */,
+			);
+			name = "Map List VC";
+			sourceTree = "<group>";
+		};
+		2EB9D8A91F68134000F06F2B /* Droibaas Data */ = {
+			isa = PBXGroup;
+			children = (
+				2E2E370E1F66FDBD008BC6F2 /* BinsDroiData.swift */,
+				2E2E36F71F6597AB008BC6F2 /* User.swift */,
+			);
+			name = "Droibaas Data";
+			sourceTree = "<group>";
+		};
+		2EB9D8AA1F68134D00F06F2B /* WDG Data */ = {
+			isa = PBXGroup;
+			children = (
+				2EB9D8A51F68126B00F06F2B /* BinWdgData.swift */,
+			);
+			name = "WDG Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,6 +228,8 @@
 				2E106CB41F6572BA008AE283 /* Sources */,
 				2E106CB51F6572BA008AE283 /* Frameworks */,
 				2E106CB61F6572BA008AE283 /* Resources */,
+				2E106CD31F6576D9008AE283 /* Embed Frameworks */,
+				2E106CE41F65778F008AE283 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -100,6 +253,7 @@
 					2E106CB71F6572BA008AE283 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 6KQ6342GL4;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -128,41 +282,72 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E106CC91F6572BA008AE283 /* LaunchScreen.storyboard in Resources */,
+				2E106CE21F657768008AE283 /* DroiBaaS.plist in Resources */,
 				2E106CC61F6572BA008AE283 /* Assets.xcassets in Resources */,
-				2E106CC11F6572BA008AE283 /* Main.storyboard in Resources */,
+				2E2E37141F67A5DA008BC6F2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E106CE41F65778F008AE283 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PROJECT_DIR}/DroiCoreSDK/scripts/baas_cli\" parse \"${SRCROOT}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2E106CB41F6572BA008AE283 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E106CBE1F6572BA008AE283 /* ViewController.swift in Sources */,
+				2EB9D8A61F68126B00F06F2B /* BinWdgData.swift in Sources */,
+				2E106CBE1F6572BA008AE283 /* SignInViewController.swift in Sources */,
 				2E106CC41F6572BA008AE283 /* BaasTest.xcdatamodeld in Sources */,
+				2E2E371A1F67B15A008BC6F2 /* AdoptBinCell.swift in Sources */,
+				2E2E371C1F67B170008BC6F2 /* baseCell.swift in Sources */,
+				2E2E36FA1F65A284008BC6F2 /* RegisterViewController.swift in Sources */,
+				2E2E36F81F6597AB008BC6F2 /* User.swift in Sources */,
+				2E2E37091F66B8B6008BC6F2 /* MapViewController.swift in Sources */,
+				2E106CE31F657768008AE283 /* DroiBaaSForSwift.swift in Sources */,
+				2E106CE11F657768008AE283 /* DroiBaaS.m in Sources */,
+				2E2E370F1F66FDBD008BC6F2 /* BinsDroiData.swift in Sources */,
 				2E106CBC1F6572BA008AE283 /* AppDelegate.swift in Sources */,
+				2E2E37071F66B66C008BC6F2 /* userBehaviorViewController.swift in Sources */,
+				2E2E37181F67B131008BC6F2 /* SuspiciousBinCell.swift in Sources */,
+				2E2E37161F67A678008BC6F2 /* MapListCell.swift in Sources */,
+				2E2E370B1F66B930008BC6F2 /* BinInformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2E106CBF1F6572BA008AE283 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2E106CC01F6572BA008AE283 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2E106CC71F6572BA008AE283 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2E106CC81F6572BA008AE283 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		2E2E37121F67A5DA008BC6F2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2E2E37131F67A5DA008BC6F2 /* Base */,
+			);
+			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -265,11 +450,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 6KQ6342GL4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = BaasTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
+				);
+				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jli.BaasTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BaasTest/BaasTest-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -278,11 +475,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 6KQ6342GL4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = BaasTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
+				);
+				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jli.BaasTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BaasTest/BaasTest-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -306,6 +514,7 @@
 				2E106CCF1F6572BA008AE283 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

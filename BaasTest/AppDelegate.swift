@@ -8,6 +8,10 @@
 
 import UIKit
 import CoreData
+import DroiCoreSDK
+import WilddogCore
+import WilddogAuth
+import WilddogSync
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +21,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    
+//    DroiCore.initializeCore()
+//    DroiObject.registerCustomClass(User.classForCoder())
+//    DroiObject.registerCustomClass(BinsDroiData.classForCoder())
+    
+    let options = WDGOptions.init(syncURL: "https://wd0387996685gfgmcf.wilddogio.com")
+    WDGApp.configure(with: options)
+    //WDGSync.setLoggingEnabled(true)
+
+    
     return true
   }
 
