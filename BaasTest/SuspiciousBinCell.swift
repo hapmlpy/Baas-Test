@@ -39,27 +39,22 @@ class SuspiciousBinCell: UITableViewCell {
   }
   
   @IBAction func denyTapped(_ sender: Any){
-    print("deny tapped inside")
     let ref = WDGSync.sync().reference(withPath: "users")
-    //let keyToBin = ref.child("bins").childByAutoId().key
-    
     ref.child("bins").child(unCheckedBinID).removeValue(completionBlock: {
       snapshot in
-      print("remove \(snapshot)")
       let error = snapshot.0
       if error == nil{
         self.delegate?.denyRegister(isDenyed: true, rowIndex: self.rowIndex!)
       }
     })
-
     
-    ref.child("bins").observeSingleEvent(of: .value, with: {
-      snap in
-      if let currentData = snap.value as? [String: AnyObject]{
-        let countingThis = currentData.values
-        print("current data count is \(countingThis.count)")
-      }
-    })
+//    ref.child("bins").observeSingleEvent(of: .value, with: {
+//      snap in
+//      if let currentData = snap.value as? [String: AnyObject]{
+//        let countingThis = currentData.values
+//        print("current data count is \(countingThis.count)")
+//      }
+//    })
     
     ref.removeAllObservers()
   }

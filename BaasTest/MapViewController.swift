@@ -92,7 +92,6 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 //    }
 //    if section == "base"{
 //    }
-    print("count is \(count)")
     return count
   }
   
@@ -106,7 +105,6 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
           cella.rowIndex = indexPath.row
           cella.binNameLabel.text = binPorperties.binType
           cella.unCheckedBinID = binPorperties.binId
-
           cell = cella
     
         }
@@ -125,7 +123,6 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 extension MapViewController: SuspiciousDelegate{
   func denyRegister(isDenyed: Bool, rowIndex: Int){
     if isDenyed == true{
-      print("ok,delete this row")
       ucCheckedBins.remove(at: rowIndex)
       DispatchQueue.main.async{
         self.mapList.reloadData()
