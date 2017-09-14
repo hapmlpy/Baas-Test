@@ -14,7 +14,7 @@ class BinsDroiData: DroiObject {
   var user: String!
   var latitude: Double!
   var longitude: Double!
-  var binType: String!
+  var dataType: String!
   
 
 }

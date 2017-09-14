@@ -11,12 +11,14 @@ import WilddogAuth
 import WilddogCore
 import WilddogSync
 
+
 class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
   
   var binInformation = NSMutableArray()
+  var dataMethods = DataMethods()
   
   let sectionTitle = [
-    "unRegisterBin",
+    "UnRegisterBin",
     "Bin",
     "Base"
   ]
@@ -24,6 +26,9 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
   var assets = NSMutableArray()
   
   var ucCheckedBins = [BinWdgData]()
+  var bins = [BinWdgData]()
+  var bases = [BaseWdgData]()
+  var notes = [BinWdgData]()
   
   @IBOutlet weak var mapList: UITableView!
   
@@ -31,9 +36,8 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     super.viewDidLoad()
     mapList.delegate = self
     mapList.dataSource = self
-    
-    loadUnregisterBinData()
-    assets = [ucCheckedBins]
+    loadData()
+    assets = [ucCheckedBins, bins, bases]
     
   }
   
@@ -41,37 +45,64 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     super.didReceiveMemoryWarning()
   }
   
-  
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
-  
-  func loadUnregisterBinData(){
-    let ref = WDGSync.sync().reference(withPath: "users")
-    ref.child("bins").observeSingleEvent(of: .value, with: {
-      snapshot in
-      if let binDictionary = snapshot.value as? [String: AnyObject]{
-        for (childKey, binProperitis) in binDictionary {
-          if binProperitis["binType"] as! String == "unChecked"{
-            let uncheckedbin = BinWdgData()
-            uncheckedbin.uid = binProperitis["uid"] as? String
-            uncheckedbin.latitude = binProperitis["latitude"] as? Double
-            uncheckedbin.longitude = binProperitis["longitude"] as? Double
-            uncheckedbin.binType = binProperitis["binType"] as? String
-            uncheckedbin.binId = childKey
-            self.ucCheckedBins.append(uncheckedbin)
+  func loadData(){
+    if let uid = WDGAuth.auth()?.currentUser!.uid{
+      let ref = WDGSync.sync().reference(withPath: "/users/\(uid)")
+      
+      ref.child("bins").observeSingleEvent(of: .value, with: {
+        snapshot in
+        if let binDictionary = snapshot.value as? [String: AnyObject]{
+          for (childKey, binProperitis) in binDictionary {
+            if binProperitis["dataType"] as! String == "unChecked"{
+              let uncheckedbin = BinWdgData()
+              uncheckedbin.uid = binProperitis["uid"] as? String
+              uncheckedbin.latitude = binProperitis["latitude"] as? Double
+              uncheckedbin.longitude = binProperitis["longitude"] as? Double
+              uncheckedbin.dataType = binProperitis["dataType"] as? String
+              uncheckedbin.binId = childKey
+              self.ucCheckedBins.append(uncheckedbin)
+            }
+            if binProperitis["dataType"] as! String == "bin"{
+              let bin = BinWdgData()
+              bin.uid = binProperitis["uid"] as? String
+              bin.latitude = binProperitis["latitude"] as? Double
+              bin.longitude = binProperitis["longitude"] as? Double
+              bin.dataType = binProperitis["dataType"] as? String
+              bin.binId = childKey
+              if binProperitis["binName"] as! String != ""{
+                bin.binName = binProperitis["binName"] as! String
+              }else{
+                bin.binName = "还未起名"
+              }
+              self.bins.append(bin)
+            }
           }
+          self.mapList.reloadData()
         }
-        self.mapList.reloadData()
-      }
-    })
-    ref.removeAllObservers()
+      })
+      
+      ref.child("base").observeSingleEvent(of: .value, with: {
+        snapshot in
+        if let baseDictionary = snapshot.value as? [String: AnyObject]{
+          for (childKey, baseProperitis) in baseDictionary{
+            let base = BaseWdgData()
+            base.uid = baseProperitis["uid"] as? String
+            base.latitude = baseProperitis["latitude"] as? Double
+            base.longitude = baseProperitis["longitude"] as? Double
+            base.dataType = baseProperitis["dataType"] as? String
+            base.baseId = childKey
+            if baseProperitis["baseName"] as! String != ""{
+              base.baseName = baseProperitis["baseName"] as! String
+            }else{
+              base.baseName = "还未起名"
+            }
+            self.bases.append(base)
+          }
+          self.mapList.reloadData()
+        }
+      })
+      ref.removeAllObservers()
+    }// confirm current user id
   }
   
   
@@ -85,42 +116,53 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     var count = Int()
     let section = sectionTitle[section]
-    if section == "unRegisterBin"{
+    if section == "UnRegisterBin"{
       count = ucCheckedBins.count
+      print("UnRegisterBin count: \(count)")
     }
-//    if section == "bin"{
-//    }
-//    if section == "base"{
-//    }
+    if section == "Bin"{
+      count = bins.count
+      print("bin count: \(count)")
+    }
+    if section == "Base"{
+      count = bases.count
+    }
     return count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     var cell = UITableViewCell()
-        let section = sectionTitle[indexPath.section]
-        if section == "unRegisterBin"{
-          let cella = tableView.dequeueReusableCell(withIdentifier: "uncheckedBin", for: indexPath) as! SuspiciousBinCell
-          let binPorperties = self.ucCheckedBins[indexPath.row]
-          cella.delegate = self
-          cella.rowIndex = indexPath.row
-          cella.binNameLabel.text = binPorperties.binType
-          cella.unCheckedBinID = binPorperties.binId
-          cell = cella
-    
-        }
-        //    if section == "bin" {
-        //      let cella = tableView.dequeueReusableCell(withIdentifier: "adoptedBin", for: indexPath) as! AdoptBinCell
-        //      cell = cella
-        //    }
-        //    if section == "base" {
-        //      let cella = tableView.dequeueReusableCell(withIdentifier: "base", for: indexPath) as! baseCell
-        //      cell = cella
-        //    }
+    let section = sectionTitle[indexPath.section]
+    if section == "UnRegisterBin"{
+      let cella = tableView.dequeueReusableCell(withIdentifier: "uncheckedBin", for: indexPath) as! SuspiciousBinCell
+      let binPorperties = self.ucCheckedBins[indexPath.row]
+      cella.delegate = self
+      cella.adoptedBin = binPorperties
+      cella.rowIndex = indexPath.row
+      
+      cella.binNameLabel.text = binPorperties.dataType
+      cella.unCheckedBinID = binPorperties.binId
+      cell = cella
+
+    }
+    if section == "Bin" {
+      let cella = tableView.dequeueReusableCell(withIdentifier: "adoptedBin", for: indexPath) as! AdoptBinCell
+      let binPorperties = self.bins[indexPath.row]
+      cella.delegate = self
+      cella.binNameLabel.text = binPorperties.binName
+      cell = cella
+    }
+    if section == "Base" {
+      let cella = tableView.dequeueReusableCell(withIdentifier: "base", for: indexPath) as! baseCell
+      let basePorperties = self.bases[indexPath.row]
+      cella.baseNameLabel.text = basePorperties.baseName
+      cell = cella
+    }
     return cell
   }
 }
 
-extension MapViewController: SuspiciousDelegate{
+extension MapViewController: SuspiciousDelegate,AdoptBinDelegate,BaseDelegate{
   func denyRegister(isDenyed: Bool, rowIndex: Int){
     if isDenyed == true{
       ucCheckedBins.remove(at: rowIndex)
@@ -131,4 +173,27 @@ extension MapViewController: SuspiciousDelegate{
       print("no message")
     }
   }
+  
+  func adoptThisBin(isAdopted: Bool, rowIndex: Int, bin: BinWdgData){
+    if isAdopted == true{
+      ucCheckedBins.remove(at:rowIndex)
+      bins.append(bin)
+      DispatchQueue.main.async{
+        self.mapList.reloadData()
+      }
+    }
+  }
+  
+  func checkBinInformationTapped(isTapped: Bool) {
+    if isTapped == true {
+      print("go to information vc")
+      let binInforVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "binInfroVC") as? BinInformationViewController
+      self.present(binInforVC!, animated: true, completion: nil)
+    }
+  }
+  
+  func checkBaseInformationTapped(isTapped: Bool) {
+    //
+  }
 }
+

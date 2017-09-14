@@ -35,11 +35,19 @@
 		2E2E370D1F66E3E3008BC6F2 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2E370C1F66E3E3008BC6F2 /* libicucore.tbd */; };
 		2E2E370F1F66FDBD008BC6F2 /* BinsDroiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2E370E1F66FDBD008BC6F2 /* BinsDroiData.swift */; };
 		2E2E37141F67A5DA008BC6F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E2E37121F67A5DA008BC6F2 /* Main.storyboard */; };
-		2E2E37161F67A678008BC6F2 /* MapListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2E37151F67A678008BC6F2 /* MapListCell.swift */; };
 		2E2E37181F67B131008BC6F2 /* SuspiciousBinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2E37171F67B131008BC6F2 /* SuspiciousBinCell.swift */; };
 		2E2E371A1F67B15A008BC6F2 /* AdoptBinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2E37191F67B15A008BC6F2 /* AdoptBinCell.swift */; };
 		2E2E371C1F67B170008BC6F2 /* baseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2E371B1F67B170008BC6F2 /* baseCell.swift */; };
 		2EB9D8A61F68126B00F06F2B /* BinWdgData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB9D8A51F68126B00F06F2B /* BinWdgData.swift */; };
+		2EB9D8AC1F68E72900F06F2B /* SCLAlertView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB9D8AB1F68E72900F06F2B /* SCLAlertView.framework */; };
+		2EB9D8AD1F68E72900F06F2B /* SCLAlertView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB9D8AB1F68E72900F06F2B /* SCLAlertView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2EB9D8AF1F6929F000F06F2B /* BaseWdgData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB9D8AE1F6929F000F06F2B /* BaseWdgData.swift */; };
+		2EB9D8B71F6954F200F06F2B /* Hero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB9D8B61F6954F200F06F2B /* Hero.framework */; };
+		2EB9D8B81F6954F200F06F2B /* Hero.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB9D8B61F6954F200F06F2B /* Hero.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2EB9D8BA1F6971CC00F06F2B /* PostWdgData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB9D8B91F6971CC00F06F2B /* PostWdgData.swift */; };
+		2EB9D8BC1F6973B600F06F2B /* DataMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB9D8BB1F6973B600F06F2B /* DataMethods.swift */; };
+		2ED846341F6A2D490094D61C /* BinSurroundingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED846331F6A2D490094D61C /* BinSurroundingTableViewController.swift */; };
+		2ED846371F6A2F9A0094D61C /* OthersBinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED846361F6A2F9A0094D61C /* OthersBinCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,7 +57,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				2EB9D8AD1F68E72900F06F2B /* SCLAlertView.framework in Embed Frameworks */,
 				2E2E37031F660F9D008BC6F2 /* WilddogSync.framework in Embed Frameworks */,
+				2EB9D8B81F6954F200F06F2B /* Hero.framework in Embed Frameworks */,
 				2E2E37011F660F9D008BC6F2 /* WilddogCore.framework in Embed Frameworks */,
 				2E106CD21F6576D9008AE283 /* DroiCoreSDK.framework in Embed Frameworks */,
 				2E2E36FF1F660F9D008BC6F2 /* WilddogAuth.framework in Embed Frameworks */,
@@ -88,11 +98,17 @@
 		2E2E370C1F66E3E3008BC6F2 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		2E2E370E1F66FDBD008BC6F2 /* BinsDroiData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinsDroiData.swift; sourceTree = "<group>"; };
 		2E2E37131F67A5DA008BC6F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = BaasTest/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2E2E37151F67A678008BC6F2 /* MapListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapListCell.swift; sourceTree = "<group>"; };
 		2E2E37171F67B131008BC6F2 /* SuspiciousBinCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuspiciousBinCell.swift; sourceTree = "<group>"; };
 		2E2E37191F67B15A008BC6F2 /* AdoptBinCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdoptBinCell.swift; sourceTree = "<group>"; };
 		2E2E371B1F67B170008BC6F2 /* baseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = baseCell.swift; sourceTree = "<group>"; };
 		2EB9D8A51F68126B00F06F2B /* BinWdgData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinWdgData.swift; sourceTree = "<group>"; };
+		2EB9D8AB1F68E72900F06F2B /* SCLAlertView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCLAlertView.framework; path = Carthage/Build/iOS/SCLAlertView.framework; sourceTree = "<group>"; };
+		2EB9D8AE1F6929F000F06F2B /* BaseWdgData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWdgData.swift; sourceTree = "<group>"; };
+		2EB9D8B61F6954F200F06F2B /* Hero.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Hero.framework; sourceTree = "<group>"; };
+		2EB9D8B91F6971CC00F06F2B /* PostWdgData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostWdgData.swift; sourceTree = "<group>"; };
+		2EB9D8BB1F6973B600F06F2B /* DataMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataMethods.swift; sourceTree = "<group>"; };
+		2ED846331F6A2D490094D61C /* BinSurroundingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinSurroundingTableViewController.swift; sourceTree = "<group>"; };
+		2ED846361F6A2F9A0094D61C /* OthersBinCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OthersBinCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,9 +118,11 @@
 			files = (
 				2E2E370D1F66E3E3008BC6F2 /* libicucore.tbd in Frameworks */,
 				2E2E37051F660FD6008BC6F2 /* JavaScriptCore.framework in Frameworks */,
+				2EB9D8B71F6954F200F06F2B /* Hero.framework in Frameworks */,
 				2E2E37021F660F9D008BC6F2 /* WilddogSync.framework in Frameworks */,
 				2E2E37001F660F9D008BC6F2 /* WilddogCore.framework in Frameworks */,
 				2E106CDA1F657712008AE283 /* SystemConfiguration.framework in Frameworks */,
+				2EB9D8AC1F68E72900F06F2B /* SCLAlertView.framework in Frameworks */,
 				2E106CD81F65770B008AE283 /* libz.tbd in Frameworks */,
 				2E106CD61F6576FF008AE283 /* libsqlite3.tbd in Frameworks */,
 				2E2E36FE1F660F9D008BC6F2 /* WilddogAuth.framework in Frameworks */,
@@ -118,6 +136,8 @@
 		2E106CAF1F6572BA008AE283 = {
 			isa = PBXGroup;
 			children = (
+				2EB9D8B61F6954F200F06F2B /* Hero.framework */,
+				2EB9D8AB1F68E72900F06F2B /* SCLAlertView.framework */,
 				2E2E36FB1F660F9D008BC6F2 /* WilddogAuth.framework */,
 				2E2E36FC1F660F9D008BC6F2 /* WilddogCore.framework */,
 				2E2E36FD1F660F9D008BC6F2 /* WilddogSync.framework */,
@@ -141,10 +161,12 @@
 			children = (
 				2E106CDB1F65773A008AE283 /* Droibaas */,
 				2E106CBB1F6572BA008AE283 /* AppDelegate.swift */,
+				2EB9D8BB1F6973B600F06F2B /* DataMethods.swift */,
 				2EB9D8A71F6812FB00F06F2B /* Sign In Out VC */,
 				2E2E37061F66B66C008BC6F2 /* userBehaviorViewController.swift */,
+				2ED846351F6A2D5B0094D61C /* Bin Surrounding VC */,
 				2EB9D8A81F68132800F06F2B /* Map List VC */,
-				2E2E370A1F66B930008BC6F2 /* BinInformationViewController.swift */,
+				2EB9D8B21F69527D00F06F2B /* Bin Information VC */,
 				2EB9D8AA1F68134D00F06F2B /* WDG Data */,
 				2EB9D8A91F68134000F06F2B /* Droibaas Data */,
 				2E2E37121F67A5DA008BC6F2 /* Main.storyboard */,
@@ -196,7 +218,6 @@
 				2E2E37171F67B131008BC6F2 /* SuspiciousBinCell.swift */,
 				2E2E37191F67B15A008BC6F2 /* AdoptBinCell.swift */,
 				2E2E371B1F67B170008BC6F2 /* baseCell.swift */,
-				2E2E37151F67A678008BC6F2 /* MapListCell.swift */,
 			);
 			name = "Map List VC";
 			sourceTree = "<group>";
@@ -213,9 +234,28 @@
 		2EB9D8AA1F68134D00F06F2B /* WDG Data */ = {
 			isa = PBXGroup;
 			children = (
+				2EB9D8B91F6971CC00F06F2B /* PostWdgData.swift */,
 				2EB9D8A51F68126B00F06F2B /* BinWdgData.swift */,
+				2EB9D8AE1F6929F000F06F2B /* BaseWdgData.swift */,
 			);
 			name = "WDG Data";
+			sourceTree = "<group>";
+		};
+		2EB9D8B21F69527D00F06F2B /* Bin Information VC */ = {
+			isa = PBXGroup;
+			children = (
+				2E2E370A1F66B930008BC6F2 /* BinInformationViewController.swift */,
+			);
+			name = "Bin Information VC";
+			sourceTree = "<group>";
+		};
+		2ED846351F6A2D5B0094D61C /* Bin Surrounding VC */ = {
+			isa = PBXGroup;
+			children = (
+				2ED846331F6A2D490094D61C /* BinSurroundingTableViewController.swift */,
+				2ED846361F6A2F9A0094D61C /* OthersBinCell.swift */,
+			);
+			name = "Bin Surrounding VC";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,10 +351,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ED846371F6A2F9A0094D61C /* OthersBinCell.swift in Sources */,
 				2EB9D8A61F68126B00F06F2B /* BinWdgData.swift in Sources */,
 				2E106CBE1F6572BA008AE283 /* SignInViewController.swift in Sources */,
 				2E106CC41F6572BA008AE283 /* BaasTest.xcdatamodeld in Sources */,
 				2E2E371A1F67B15A008BC6F2 /* AdoptBinCell.swift in Sources */,
+				2ED846341F6A2D490094D61C /* BinSurroundingTableViewController.swift in Sources */,
 				2E2E371C1F67B170008BC6F2 /* baseCell.swift in Sources */,
 				2E2E36FA1F65A284008BC6F2 /* RegisterViewController.swift in Sources */,
 				2E2E36F81F6597AB008BC6F2 /* User.swift in Sources */,
@@ -322,11 +364,13 @@
 				2E106CE31F657768008AE283 /* DroiBaaSForSwift.swift in Sources */,
 				2E106CE11F657768008AE283 /* DroiBaaS.m in Sources */,
 				2E2E370F1F66FDBD008BC6F2 /* BinsDroiData.swift in Sources */,
+				2EB9D8AF1F6929F000F06F2B /* BaseWdgData.swift in Sources */,
+				2EB9D8BC1F6973B600F06F2B /* DataMethods.swift in Sources */,
 				2E106CBC1F6572BA008AE283 /* AppDelegate.swift in Sources */,
 				2E2E37071F66B66C008BC6F2 /* userBehaviorViewController.swift in Sources */,
 				2E2E37181F67B131008BC6F2 /* SuspiciousBinCell.swift in Sources */,
-				2E2E37161F67A678008BC6F2 /* MapListCell.swift in Sources */,
 				2E2E370B1F66B930008BC6F2 /* BinInformationViewController.swift in Sources */,
+				2EB9D8BA1F6971CC00F06F2B /* PostWdgData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +499,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = BaasTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -480,6 +525,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = BaasTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

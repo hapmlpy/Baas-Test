@@ -13,7 +13,8 @@ class BinWdgData: NSObject {
   var uid: String!
   var latitude: Double!
   var longitude: Double!
-  var binType: String!
+  var dataType: String!
   var binId: String!
+  var binName: String!
 
 }

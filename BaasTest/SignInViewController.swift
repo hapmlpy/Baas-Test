@@ -10,6 +10,7 @@ import UIKit
 import DroiCoreSDK
 import WilddogCore
 import WilddogAuth
+import WilddogSync
 
 class SignInViewController: UIViewController {
 
@@ -62,9 +63,12 @@ class SignInViewController: UIViewController {
     */
     ////////////////////////////////////////////
     //使用Wild Dog SDK
+    guard userphoneTextField.text != "", passwordTextField.text != "" else { return }
+    
     let phonenumber = userphoneTextField.text
     let password = passwordTextField.text
-    
+
+    //用户登录
     WDGAuth.auth()?.signIn(withPhone: phonenumber!, password: password!, completion: {
       user, error in 
       if error != nil {
@@ -72,18 +76,9 @@ class SignInViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
       }else{
+        //进入
         if let userbehaviorVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "behaviorVC") as? userBehaviorViewController{
           self.present(userbehaviorVC, animated: true, completion: nil)
-        }else{
-          if (error != nil) {
-            let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-          }else{
-            let alert = UIAlertController(title: "Success", message: "save this suspicous bin sucessfully", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-          }
         }
       }
     })
@@ -92,7 +87,7 @@ class SignInViewController: UIViewController {
 
   @IBAction func logginOutTapped(_ sender: Any) {
 
-     
+    /*
     //使用Droibass SDK
     let user = DroiUser.getCurrent()
     let result = user?.logout()
@@ -107,9 +102,9 @@ class SignInViewController: UIViewController {
       self.present(alert, animated: true, completion: nil)
     }
     
-    
+    */
     ////////////////////////////////////////////
-    /*
+    
     // 使用Wild Dog SDK
     do {
       try WDGAuth.auth()?.signOut()
@@ -121,7 +116,7 @@ class SignInViewController: UIViewController {
       alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
       self.present(alert, animated: true, completion: nil)
     }
-    */
+ 
   }
 }
 

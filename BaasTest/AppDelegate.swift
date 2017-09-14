@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    DroiObject.registerCustomClass(User.classForCoder())
 //    DroiObject.registerCustomClass(BinsDroiData.classForCoder())
     
+    // wd0387996685gfgmcf
     let options = WDGOptions.init(syncURL: "https://wd0387996685gfgmcf.wilddogio.com")
     WDGApp.configure(with: options)
     //WDGSync.setLoggingEnabled(true)
