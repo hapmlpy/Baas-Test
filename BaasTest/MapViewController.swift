@@ -15,7 +15,6 @@ import WilddogSync
 class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
   
   var binInformation = NSMutableArray()
-  var dataMethods = DataMethods()
   
   let sectionTitle = [
     "UnRegisterBin",

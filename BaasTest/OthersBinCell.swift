@@ -9,8 +9,7 @@
 import UIKit
 
 protocol OtherBinDelegate {
-  func leaveMeassageTapped(isTapped: Bool)
-  func leaveAccuseTapped(isTapped: Bool)
+  func leaveMeassageTapped(isAccuse: Bool)
 }
 
 class OthersBinCell: UITableViewCell {
@@ -32,9 +31,9 @@ class OthersBinCell: UITableViewCell {
     }
 
   @IBAction func leaveMeassge(_ sender: Any) {
-    self.delegate?.leaveMeassageTapped(isTapped: true)
+    self.delegate?.leaveMeassageTapped(isAccuse: false)
   }
   @IBAction func leaveAccuse(_ sender: Any) {
-    self.delegate?.leaveAccuseTapped(isTapped: true)
+    self.delegate?.leaveMeassageTapped(isAccuse: true)
   }
 }

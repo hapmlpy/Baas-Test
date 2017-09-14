@@ -48,6 +48,7 @@
 		2EB9D8BC1F6973B600F06F2B /* DataMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB9D8BB1F6973B600F06F2B /* DataMethods.swift */; };
 		2ED846341F6A2D490094D61C /* BinSurroundingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED846331F6A2D490094D61C /* BinSurroundingTableViewController.swift */; };
 		2ED846371F6A2F9A0094D61C /* OthersBinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED846361F6A2F9A0094D61C /* OthersBinCell.swift */; };
+		2ED846391F6AB7C20094D61C /* MessageWdgData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED846381F6AB7C20094D61C /* MessageWdgData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -109,6 +110,7 @@
 		2EB9D8BB1F6973B600F06F2B /* DataMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataMethods.swift; sourceTree = "<group>"; };
 		2ED846331F6A2D490094D61C /* BinSurroundingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinSurroundingTableViewController.swift; sourceTree = "<group>"; };
 		2ED846361F6A2F9A0094D61C /* OthersBinCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OthersBinCell.swift; sourceTree = "<group>"; };
+		2ED846381F6AB7C20094D61C /* MessageWdgData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWdgData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +239,7 @@
 				2EB9D8B91F6971CC00F06F2B /* PostWdgData.swift */,
 				2EB9D8A51F68126B00F06F2B /* BinWdgData.swift */,
 				2EB9D8AE1F6929F000F06F2B /* BaseWdgData.swift */,
+				2ED846381F6AB7C20094D61C /* MessageWdgData.swift */,
 			);
 			name = "WDG Data";
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				2E106CBC1F6572BA008AE283 /* AppDelegate.swift in Sources */,
 				2E2E37071F66B66C008BC6F2 /* userBehaviorViewController.swift in Sources */,
 				2E2E37181F67B131008BC6F2 /* SuspiciousBinCell.swift in Sources */,
+				2ED846391F6AB7C20094D61C /* MessageWdgData.swift in Sources */,
 				2E2E370B1F66B930008BC6F2 /* BinInformationViewController.swift in Sources */,
 				2EB9D8BA1F6971CC00F06F2B /* PostWdgData.swift in Sources */,
 			);
