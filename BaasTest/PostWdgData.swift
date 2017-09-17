@@ -9,11 +9,19 @@
 import UIKit
 
 class PostWdgData: NSObject {
+
+  var onBinId = ""
+  var authorName = ""
+  var authorId = ""
   
-  var postID: String!
-  var postContent: String!
-  var author: String!
-  var forBin: String!
-  var postType: String!
+  var toUserName = ""
+  var toUserId = ""
+  
+  var postContent = ""
+  var postType = ""
+  
+  var postId = ""
+  var time: Int = 0
+  var someday = ""
 
 }

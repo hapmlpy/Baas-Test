@@ -170,7 +170,8 @@ class userBehaviorViewController: UIViewController {
         "uid" : uid,
         "latitude" : latitude,
         "longitude" : longitude,
-        "dataType" : "unChecked"
+        "dataType" : "unChecked",
+        "binName" : "未命名"
       ]
       let ref = WDGSync.sync().reference(withPath: "/users/\(uid)")
       ref.child("bins").childByAutoId().setValue(suspicousBin, withCompletionBlock: {
@@ -232,4 +233,9 @@ class userBehaviorViewController: UIViewController {
   @IBAction func closeBinSurrounding(_ segue: UIStoryboardSegue){
     
   }
+  
+  @IBAction func closeMapview(_ segue: UIStoryboardSegue){
+    
+  }
+  
 }

@@ -13,8 +13,11 @@ import WilddogSync
 
 
 class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+  @IBOutlet weak var mapList: UITableView!
   
   var binInformation = NSMutableArray()
+  var userid: String!
+  var binid: String!
   
   let sectionTitle = [
     "UnRegisterBin",
@@ -29,13 +32,14 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
   var bases = [BaseWdgData]()
   var notes = [BinWdgData]()
   
-  @IBOutlet weak var mapList: UITableView!
+  //will send this to bin detail vc
+  var uncheckedBin = BinWdgData()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     mapList.delegate = self
     mapList.dataSource = self
-    loadData()
+    loadBinData()
     assets = [ucCheckedBins, bins, bases]
     
   }
@@ -44,8 +48,9 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     super.didReceiveMemoryWarning()
   }
   
-  func loadData(){
+  func loadBinData(){
     if let uid = WDGAuth.auth()?.currentUser!.uid{
+      self.userid = uid
       let ref = WDGSync.sync().reference(withPath: "/users/\(uid)")
       
       ref.child("bins").observeSingleEvent(of: .value, with: {
@@ -59,6 +64,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
               uncheckedbin.longitude = binProperitis["longitude"] as? Double
               uncheckedbin.dataType = binProperitis["dataType"] as? String
               uncheckedbin.binId = childKey
+              uncheckedbin.binName = "未命名"
               self.ucCheckedBins.append(uncheckedbin)
             }
             if binProperitis["dataType"] as! String == "bin"{
@@ -141,14 +147,18 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
       
       cella.binNameLabel.text = binPorperties.dataType
       cella.unCheckedBinID = binPorperties.binId
+      cella.uid = self.userid
       cell = cella
 
     }
     if section == "Bin" {
       let cella = tableView.dequeueReusableCell(withIdentifier: "adoptedBin", for: indexPath) as! AdoptBinCell
-      let binPorperties = self.bins[indexPath.row]
+      let binPorperities = self.bins[indexPath.row]
+      print("on row: \(indexPath.row)")
       cella.delegate = self
-      cella.binNameLabel.text = binPorperties.binName
+      cella.binNameLabel.text = binPorperities.binName
+      cella.binid = binPorperities.binId
+      self.binid = binPorperities.binId
       cell = cella
     }
     if section == "Base" {
@@ -158,6 +168,11 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
       cell = cella
     }
     return cell
+  }
+  
+  // MARK: - Unwind segue
+  @IBAction func closeBinInforVC(_ segue: UIStoryboardSegue){
+    
   }
 }
 
@@ -183,11 +198,12 @@ extension MapViewController: SuspiciousDelegate,AdoptBinDelegate,BaseDelegate{
     }
   }
   
-  func checkBinInformationTapped(isTapped: Bool) {
-    if isTapped == true {
-      print("go to information vc")
-      let binInforVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "binInfroVC") as? BinInformationViewController
-      self.present(binInforVC!, animated: true, completion: nil)
+  func checkBinInformationTapped(onBin: String) {
+    if let binInforVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "binInfroVC") as? BinInformationViewController {
+      binInforVC.binid = onBin
+      binInforVC.userid = self.userid
+      //print("what bin detail information vc show? path: \n userid folder: \(self.userid) \n binid folder\(self.binid) ")
+      self.present(binInforVC, animated: true, completion: nil)
     }
   }
   

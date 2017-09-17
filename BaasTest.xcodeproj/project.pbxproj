@@ -38,6 +38,7 @@
 		2E2E37181F67B131008BC6F2 /* SuspiciousBinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2E37171F67B131008BC6F2 /* SuspiciousBinCell.swift */; };
 		2E2E371A1F67B15A008BC6F2 /* AdoptBinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2E37191F67B15A008BC6F2 /* AdoptBinCell.swift */; };
 		2E2E371C1F67B170008BC6F2 /* baseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2E371B1F67B170008BC6F2 /* baseCell.swift */; };
+		2E58141E1F6B6FE300F9FCDA /* BinInforCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E58141D1F6B6FE300F9FCDA /* BinInforCell.swift */; };
 		2EB9D8A61F68126B00F06F2B /* BinWdgData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB9D8A51F68126B00F06F2B /* BinWdgData.swift */; };
 		2EB9D8AC1F68E72900F06F2B /* SCLAlertView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB9D8AB1F68E72900F06F2B /* SCLAlertView.framework */; };
 		2EB9D8AD1F68E72900F06F2B /* SCLAlertView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB9D8AB1F68E72900F06F2B /* SCLAlertView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -46,6 +47,8 @@
 		2EB9D8B81F6954F200F06F2B /* Hero.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB9D8B61F6954F200F06F2B /* Hero.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2EB9D8BA1F6971CC00F06F2B /* PostWdgData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB9D8B91F6971CC00F06F2B /* PostWdgData.swift */; };
 		2EB9D8BC1F6973B600F06F2B /* DataMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB9D8BB1F6973B600F06F2B /* DataMethods.swift */; };
+		2ED345AC1F6E1EE100E1A30E /* TabelTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED345AB1F6E1EE100E1A30E /* TabelTestViewController.swift */; };
+		2ED345B11F6E2BC400E1A30E /* BoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED345B01F6E2BC400E1A30E /* BoardCell.swift */; };
 		2ED846341F6A2D490094D61C /* BinSurroundingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED846331F6A2D490094D61C /* BinSurroundingTableViewController.swift */; };
 		2ED846371F6A2F9A0094D61C /* OthersBinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED846361F6A2F9A0094D61C /* OthersBinCell.swift */; };
 		2ED846391F6AB7C20094D61C /* MessageWdgData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED846381F6AB7C20094D61C /* MessageWdgData.swift */; };
@@ -102,12 +105,15 @@
 		2E2E37171F67B131008BC6F2 /* SuspiciousBinCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuspiciousBinCell.swift; sourceTree = "<group>"; };
 		2E2E37191F67B15A008BC6F2 /* AdoptBinCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdoptBinCell.swift; sourceTree = "<group>"; };
 		2E2E371B1F67B170008BC6F2 /* baseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = baseCell.swift; sourceTree = "<group>"; };
+		2E58141D1F6B6FE300F9FCDA /* BinInforCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinInforCell.swift; sourceTree = "<group>"; };
 		2EB9D8A51F68126B00F06F2B /* BinWdgData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinWdgData.swift; sourceTree = "<group>"; };
 		2EB9D8AB1F68E72900F06F2B /* SCLAlertView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCLAlertView.framework; path = Carthage/Build/iOS/SCLAlertView.framework; sourceTree = "<group>"; };
 		2EB9D8AE1F6929F000F06F2B /* BaseWdgData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWdgData.swift; sourceTree = "<group>"; };
 		2EB9D8B61F6954F200F06F2B /* Hero.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Hero.framework; sourceTree = "<group>"; };
 		2EB9D8B91F6971CC00F06F2B /* PostWdgData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostWdgData.swift; sourceTree = "<group>"; };
 		2EB9D8BB1F6973B600F06F2B /* DataMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataMethods.swift; sourceTree = "<group>"; };
+		2ED345AB1F6E1EE100E1A30E /* TabelTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabelTestViewController.swift; sourceTree = "<group>"; };
+		2ED345B01F6E2BC400E1A30E /* BoardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardCell.swift; sourceTree = "<group>"; };
 		2ED846331F6A2D490094D61C /* BinSurroundingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinSurroundingTableViewController.swift; sourceTree = "<group>"; };
 		2ED846361F6A2F9A0094D61C /* OthersBinCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OthersBinCell.swift; sourceTree = "<group>"; };
 		2ED846381F6AB7C20094D61C /* MessageWdgData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWdgData.swift; sourceTree = "<group>"; };
@@ -171,6 +177,7 @@
 				2EB9D8B21F69527D00F06F2B /* Bin Information VC */,
 				2EB9D8AA1F68134D00F06F2B /* WDG Data */,
 				2EB9D8A91F68134000F06F2B /* Droibaas Data */,
+				2ED345AD1F6E1EEC00E1A30E /* Layout Test */,
 				2E2E37121F67A5DA008BC6F2 /* Main.storyboard */,
 				2E106CC51F6572BA008AE283 /* Assets.xcassets */,
 				2E106CC71F6572BA008AE283 /* LaunchScreen.storyboard */,
@@ -248,8 +255,18 @@
 			isa = PBXGroup;
 			children = (
 				2E2E370A1F66B930008BC6F2 /* BinInformationViewController.swift */,
+				2E58141D1F6B6FE300F9FCDA /* BinInforCell.swift */,
 			);
 			name = "Bin Information VC";
+			sourceTree = "<group>";
+		};
+		2ED345AD1F6E1EEC00E1A30E /* Layout Test */ = {
+			isa = PBXGroup;
+			children = (
+				2ED345AB1F6E1EE100E1A30E /* TabelTestViewController.swift */,
+				2ED345B01F6E2BC400E1A30E /* BoardCell.swift */,
+			);
+			name = "Layout Test";
 			sourceTree = "<group>";
 		};
 		2ED846351F6A2D5B0094D61C /* Bin Surrounding VC */ = {
@@ -361,7 +378,10 @@
 				2E2E371A1F67B15A008BC6F2 /* AdoptBinCell.swift in Sources */,
 				2ED846341F6A2D490094D61C /* BinSurroundingTableViewController.swift in Sources */,
 				2E2E371C1F67B170008BC6F2 /* baseCell.swift in Sources */,
+				2ED345AC1F6E1EE100E1A30E /* TabelTestViewController.swift in Sources */,
 				2E2E36FA1F65A284008BC6F2 /* RegisterViewController.swift in Sources */,
+				2E58141E1F6B6FE300F9FCDA /* BinInforCell.swift in Sources */,
+				2ED345B11F6E2BC400E1A30E /* BoardCell.swift in Sources */,
 				2E2E36F81F6597AB008BC6F2 /* User.swift in Sources */,
 				2E2E37091F66B8B6008BC6F2 /* MapViewController.swift in Sources */,
 				2E106CE31F657768008AE283 /* DroiBaaSForSwift.swift in Sources */,

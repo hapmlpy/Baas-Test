@@ -9,12 +9,13 @@
 import UIKit
 
 protocol AdoptBinDelegate {
-  func checkBinInformationTapped(isTapped: Bool)
+  func checkBinInformationTapped(onBin: String)
 }
 
 class AdoptBinCell: UITableViewCell {
   
   var delegate: AdoptBinDelegate?
+  var binid: String?
 
   @IBOutlet weak var binNameLabel: UILabel!
   override func awakeFromNib() {
@@ -29,7 +30,7 @@ class AdoptBinCell: UITableViewCell {
   }
   
   @IBAction func checkBinInformation(_ sender: Any){
-    self.delegate?.checkBinInformationTapped(isTapped: true)
+    self.delegate?.checkBinInformationTapped(onBin: binid!)
   }
 
 }

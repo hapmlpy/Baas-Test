@@ -9,7 +9,7 @@
 import UIKit
 
 protocol OtherBinDelegate {
-  func leaveMeassageTapped(isAccuse: Bool)
+  func leaveMeassageTapped(isAccuse: Bool, onBin: String)
 }
 
 class OthersBinCell: UITableViewCell {
@@ -17,11 +17,13 @@ class OthersBinCell: UITableViewCell {
   @IBOutlet weak var binIdLabel: UILabel!
   @IBOutlet weak var ownerLabel: UILabel!
   
+  var binId: String!
+  
   var delegate: OtherBinDelegate?
   
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        print("recive binid from surrounding vc: \(binId)")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -31,9 +33,10 @@ class OthersBinCell: UITableViewCell {
     }
 
   @IBAction func leaveMeassge(_ sender: Any) {
-    self.delegate?.leaveMeassageTapped(isAccuse: false)
+    self.delegate?.leaveMeassageTapped(isAccuse: false, onBin: binId)
   }
   @IBAction func leaveAccuse(_ sender: Any) {
-    self.delegate?.leaveMeassageTapped(isAccuse: true)
+    print("return binId to surrounding vc: \(binId) ")
+    self.delegate?.leaveMeassageTapped(isAccuse: true, onBin: binId)
   }
 }

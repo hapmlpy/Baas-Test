@@ -101,8 +101,8 @@ class DataMethods {
       if let postDictionary = snapshot.value as? [String: AnyObject]{
         for (childKey, postProperities) in postDictionary{
           let post = PostWdgData()
-          post.postID = childKey
-          post.postContent = postProperities["postContent"] as? String
+          post.postId = childKey
+          post.postContent = (postProperities["postContent"] as? String)!
           postDatas.append(post)
         }
         tableView.reloadData()

@@ -14,12 +14,21 @@ import SCLAlertView
 
 class BinSurroundingTableViewController: UITableViewController {
 
-  var uid: String!
-  var datas = NSMutableArray()
   
-  var binOwnerName: String!
+  
+  var pathDatas = NSMutableArray()
+  
+  //数据内容
+  var userName: String!
+  
+  
+  
+  //数据路径
+  var uid: String!
   var binOwnerId: String!
+  var binOwnerName: String!
   var onBinId: String!
+  var onBinName: String!
   
   var responder: SCLAlertView!
   var responderUpdate: SCLAlertViewResponder!
@@ -54,7 +63,18 @@ class BinSurroundingTableViewController: UITableViewController {
     ref.observeSingleEvent(of: .value, with: {
       snapshot in
       if let userDictionary = snapshot.value as? [String : AnyObject]{
-        for (key, _) in userDictionary {
+        for (key, value) in userDictionary {
+          //get user name
+          if key == self.uid {
+            if let myname = value["name"] as? String{
+              if myname != ""{
+                self.userName = myname
+              }else{
+                self.userName = "未命名"
+              }
+            }
+          }
+          
           userpath.append(key)
         }
         self.tableView.reloadData()
@@ -70,29 +90,37 @@ class BinSurroundingTableViewController: UITableViewController {
             snap in
             //这层是字典 userid : [userassets]
             if let userassets = snap.value as? [String : AnyObject]{
-              //这层是array: [bins : {binid}, "name": "..."]
+              //这层是array+属性: [bins : {binid}, "name": "..."]
               if let username = userassets["name"], let userid = userassets["uid"], let binfolders = userassets["bins"] as? [String : AnyObject] {
                 for perfolder in binfolders{
                   if let foldercontents = perfolder.value as? [String : AnyObject]{
-                    
-                    if let binbin = foldercontents["binName"] as? String {
-                      let data: Dictionary<String, String> = [
-                        "ownername" : (username as? String)!,
-                        "ownerid" : (userid as? String)!,
-                        "binname" : binbin
-                      ]
-                      self.datas.add(data)
-                    }else{
-                      let data: Dictionary<String, String> = [
-                        "ownername" : (username as? String)!,
-                        "ownerid" : (userid as? String)!,
-                        "binname" : "未命名"
-                      ]
-                      self.datas.add(data)
-                    }
-                  }
-                }
-              }
+                    if let bintype = foldercontents["dataType"] as? String {
+                      //过滤掉unchecked bin
+                      if bintype != "unChecked" {
+                        if let binbin = foldercontents["binName"] as? String {
+                          let data: Dictionary<String, String> = [
+                            "ownername" : (username as? String)!,
+                            "ownerid" : (userid as? String)!,
+                            "binname" : binbin,
+                            "binid" : perfolder.key
+                          ]
+                          self.pathDatas.add(data)
+                        }else{
+                          let data: Dictionary<String, String> = [
+                            "ownername" : (username as? String)!,
+                            "ownerid" : (userid as? String)!,
+                            "binname" : "未命名",
+                            "binid" : perfolder.key
+                          ]
+                          
+                          print("add other bin path at userid \(userId), binid \(perfolder.key):")
+                          self.pathDatas.add(data)
+                        }//检测binname是否合法
+                      }//检测是否是uncheck bin
+                    }//检测bintype属性是否存在
+                  }//获取bins-binid-下的内容
+                }//定位bins文件夹，遍历bins下所有的binid
+              }//获得及其他userid中的内容，如bins文件夹和user属性
               self.tableView.reloadData()
             }
           })
@@ -110,23 +138,28 @@ class BinSurroundingTableViewController: UITableViewController {
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return datas.count
+    return pathDatas.count
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? OthersBinCell
-    
-    if let ub = datas[indexPath.row] as? [String: String]{
-      if let ownername = ub["ownername"], let ownerid = ub["ownerid"], let binname = ub["binname"] {
+    //定位在那个user哪个bin的路径
+    if let ub = pathDatas[indexPath.row] as? [String: String]{
+      if let ownername = ub["ownername"], let ownerid = ub["ownerid"], let binname = ub["binname"], let binid = ub["binid"] {
         binOwnerName = ownername
         binOwnerId = ownerid
-        onBinId = binname
+        onBinName = binname
         cell?.binIdLabel.text = binname
         cell?.ownerLabel.text = ownername
+        cell?.binId = binid
       }
       cell?.delegate = self
     }
     return cell!
+  }
+  
+  func getTime(){
+    
   }
 
 }
@@ -147,7 +180,8 @@ extension BinSurroundingTableViewController: OtherBinDelegate{
     responderButton.isEnabled = false
   }
   
-  func leaveMeassageTapped(isAccuse: Bool) {
+  func leaveMeassageTapped(isAccuse: Bool, onBin: String) {
+    onBinId = onBin
     self.isbadMes = isAccuse
     let title = isAccuse ? "举报" : "留消息"
     let subtitle = isAccuse ? "这个垃圾箱有什么问题" : "给垃圾箱主人写点什么"
@@ -175,37 +209,39 @@ extension BinSurroundingTableViewController: OtherBinDelegate{
   }
   
   func leaveMessage(_ sender: UIButton){
-    if let uid = WDGAuth.auth()?.currentUser!.uid{
-      let mes: Dictionary<String, Any> = [
-        "who" : uid,
-        "toWho" : binOwnerName,
-        "mContent" : message,
-        "mTime" : "",
-        "mId" : "",
-        "mType": isbadMes ? "accuse" : "message",
-        "onBinId" : onBinId
-      ]
-      
-      if let binownerid = binOwnerId{
-        let ref = WDGSync.sync().reference(withPath: "/users/\(binownerid)")
-        ref.child("post").childByAutoId().setValue(mes, withCompletionBlock: {
-          error, ref in
-          if (error != nil) {
-            self.responderUpdate.setSubTitle("生成数据失败: \(String(describing: error?.localizedDescription))")
-          }else{
-            self.responderTextField.text = ""
-            self.responderTextField.removeTarget(nil, action: nil, for: UIControlEvents.allEvents)
-            self.responderButton.removeTarget(nil, action: nil, for: UIControlEvents.allEvents)
-            self.responderUpdate.close()
-            let titlegood = "发送成功"
-            let titlebad = "提交成功"
-            let subtitlegood = "垃圾箱主人将会受到您的信息"
-            let subtitlebad = "收到您的上报,如果属实，垃圾箱主人会受到惩罚，但如果恶意举报会遭报应的哦"
-            let _ = SCLAlertView().showInfo(self.isbadMes ? titlebad : titlegood,
-                                            subTitle: self.isbadMes ? subtitlebad : subtitlegood)
-          }
-        })
-      }
+    //在指定路径上上传数据
+    let mes: Dictionary<String, Any> = [
+      "onBinId" : onBinId,
+      "authorName" : self.userName,
+      "authorId" : "",
+      "toUserName" : binOwnerName,
+      "toUserId" : "",
+      "postContent" : message,
+      "postType": isbadMes ? "accuse" : "message",
+      "postId" : "",
+      "time" : Date().timeIntervalSinceReferenceDate
+    ]
+    
+    if let binownerid = binOwnerId, let binid = self.onBinId{
+      let ref = WDGSync.sync().reference(withPath: "/users/\(binownerid)/bins/\(binid)")
+      print("add message at userid \(binownerid), binid \(binid)")
+      ref.child("post").childByAutoId().setValue(mes, withCompletionBlock: {
+        error, ref in
+        if (error != nil) {
+          self.responderUpdate.setSubTitle("生成数据失败: \(String(describing: error?.localizedDescription))")
+        }else{
+          self.responderTextField.text = ""
+          self.responderTextField.removeTarget(nil, action: nil, for: UIControlEvents.allEvents)
+          self.responderButton.removeTarget(nil, action: nil, for: UIControlEvents.allEvents)
+          self.responderUpdate.close()
+          let titlegood = "发送成功"
+          let titlebad = "提交成功"
+          let subtitlegood = "垃圾箱主人将会受到您的信息"
+          let subtitlebad = "收到您的上报,如果属实，垃圾箱主人会受到惩罚，但如果恶意举报会遭报应的哦"
+          let _ = SCLAlertView().showInfo(self.isbadMes ? titlebad : titlegood,
+                                          subTitle: self.isbadMes ? subtitlebad : subtitlegood)
+        }
+      })
     }
   }
 }
